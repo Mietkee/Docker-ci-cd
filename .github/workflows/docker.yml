@@ -6,6 +6,3 @@
         with:
           compose-file: "./docker/docker-compose.yml"
           down-flags: "--volumes"
-          services: |
-          api
-          front
