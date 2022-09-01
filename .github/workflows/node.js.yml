@@ -33,7 +33,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     defaults:
       run:
-        working-directory: /myblog # Here the path to the folder where package-lock.json is located.
+        working-directory: myblog # Here the path to the folder where package-lock.json is located.
 
     steps:
     - uses: actions/checkout@v3
