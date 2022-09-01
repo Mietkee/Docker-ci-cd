@@ -6,6 +6,3 @@
         with:
           compose-file: "./docker-compose.yaml"
           down-flags: "--volumes"
-          services: |
-          api 
-          react
