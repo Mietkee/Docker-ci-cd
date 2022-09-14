@@ -15,9 +15,9 @@ jobs:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
     runs-on: ${{matrix.os}}
-  defaults:
-    run:
-      working-directory: api # Here the path to the folder where package-lock.json is located.
+    defaults:
+      run:
+        working-directory: api # Here the path to the folder where package-lock.json is located.
 
     steps:
     - uses: actions/checkout@v3
