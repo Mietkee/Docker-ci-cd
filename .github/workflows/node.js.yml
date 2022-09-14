@@ -29,10 +29,12 @@ jobs:
         cache-dependency-path: api/package-lock.json
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm test
+    # - run: npm test 
   front:
-    runs-on: ubuntu-latest
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{matrix.os}}
     defaults:
       run:
         working-directory: myblog # Here the path to the folder where package-lock.json is located.
@@ -47,5 +49,5 @@ jobs:
         cache-dependency-path: myblog/package-lock.json
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm test
+    # - run: npm test
 
