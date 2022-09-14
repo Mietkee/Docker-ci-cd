@@ -11,18 +11,13 @@ on:
 
 jobs:
   api:
-<<<<<<< HEAD
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
     runs-on: ${{matrix.os}}
-=======
-    runs-on: ubuntu-latest
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
->>>>>>> 34d553f7964b1d767a00770dbbaff31100770cac
-    defaults:
-      run:
-        working-directory: api # Here the path to the folder where package-lock.json is located.
+  defaults:
+    run:
+      working-directory: api # Here the path to the folder where package-lock.json is located.
 
     steps:
     - uses: actions/checkout@v3
@@ -34,11 +29,7 @@ jobs:
         cache-dependency-path: api/package-lock.json
     - run: npm ci
     - run: npm run build --if-present
-<<<<<<< HEAD
     - run: npm test
-=======
-#     - run: npm test
->>>>>>> 34d553f7964b1d767a00770dbbaff31100770cac
   front:
     runs-on: ubuntu-latest
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
@@ -56,18 +47,5 @@ jobs:
         cache-dependency-path: myblog/package-lock.json
     - run: npm ci
     - run: npm run build --if-present
-<<<<<<< HEAD
     - run: npm test
-=======
-#     - run: npm test
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-  # need checkout before using compose-action
-    - uses: actions/checkout@v3
-    - uses: isbang/compose-action@v1.2.0
-      with:
-        compose-file: "./docker/docker-compose.yml"
-        down-flags: "--volumes"
->>>>>>> 34d553f7964b1d767a00770dbbaff31100770cac
 
